@@ -9,6 +9,7 @@ require("dotenv").config();
 app.use(cors());
 
 app.get("/flights", (req, res) => {
+  // api from rapidAPI
   const options = {
     method: "GET",
     url: "https://toronto-pearson-airport.p.rapidapi.com/arrivals/terminal/3",
@@ -24,7 +25,6 @@ app.get("/flights", (req, res) => {
       res.json(response.data);
     })
     .catch(function (error) {
-      console.log("********** coucou *************************");
       console.error(error);
     });
 });
